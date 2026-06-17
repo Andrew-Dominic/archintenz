@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archintenz - Shaping Spaces. Building Legacies.</title>
+    <meta name="description" content="Archintenz combines rigorous architectural precision with bespoke structural lifecycle governance.">
+    <!-- Preload critical hero image for instant render -->
+    <link rel="preload" as="image" href="./assets/images/projects/Commercial project proposals/proposal1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        /* ===== FONT FACES ===== */
+        @font-face {
+            font-family: 'NeueHaasGrotesk';
+            src: url('./assets/fonts/Neue Haas Grotesk Display Family/NeueHaasGrotDisp-55Roman-Trial.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NeueHaasGrotesk';
+            src: url('./assets/fonts/Neue Haas Grotesk Display Family/NeueHaasGrotDisp-65Medium-Trial.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NeueHaasGrotesk';
+            src: url('./assets/fonts/Neue Haas Grotesk Display Family/NeueHaasGrotDisp-75Bold-Trial.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NeueHaasGrotesk';
+            src: url('./assets/fonts/Neue Haas Grotesk Display Family/NeueHaasGrotDisp-45Light-Trial.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NeueHaasGrotesk';
+            src: url('./assets/fonts/Neue Haas Grotesk Display Family/NeueHaasGrotDisp-35Thin-Trial.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'EuropaGrotesk';
+            src: url('./assets/fonts/Europa Grotesk SH DemBol/Europa Grotesk SH DemBol.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HelveticaLocal';
+            src: url('./assets/fonts/Helvetica.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Juana';
+            src: url('./assets/fonts/Juana/Demo_Fonts/Fontspring-DEMO-juana-regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #0a0a0a;
+            --accent-color: #d9232d;
+            --font-main: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        /* ===== LENIS NORMALIZATION ===== */
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow: hidden; /* Locked during preloader — unlocked by JS */
+        }
+
+        /* ===== 00 / CINEMATIC PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform;
+        }
+
+        /* Centered tagline — the cinematic focal point */
+        .preloader__tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+            font-weight: 400;
+            font-style: italic;
+            color: #0a0a0a;
+            letter-spacing: 0.01em;
+            line-height: 1.5;
+            text-align: center;
+            user-select: none;
+            max-width: 700px;
+            padding: 0 5%;
+        }
+
+        .preloader__tagline .word {
+            display: inline-block;
+            white-space: nowrap;
+            margin-right: 0.3em;
+        }
+        .preloader__tagline .word:last-child {
+            margin-right: 0;
+        }
+
+        .preloader__tagline .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(10px);
+            will-change: transform, opacity;
+        }
+
+        /* Counter — bottom-right, Playfair italic */
+        .preloader__counter {
+            position: absolute;
+            bottom: 50px;
+            right: 5%;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(10, 10, 10, 0.35);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* Label — bottom-left for visual balance */
+        .preloader__label {
+            position: absolute;
+            bottom: 54px;
+            left: 5%;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: rgba(10, 10, 10, 0.3);
+            user-select: none;
+        }
+
+        /* Full-width progress bar at the very bottom */
+        .preloader__line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 8px;
+            background: linear-gradient(90deg, #9B0000, #d9232d);
+            transition: width 0.05s linear;
+        }
+
+        /* Basic skeleton styles for layout */
+        section {
+            padding: 120px 5%;
+        }
+
+        /* ============================================
+           01 / NAVIGATION HEADER & 02 / HERO CANVAS
+           ============================================ */
+        .hero-editorial {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 800px;
+            background-color: #9B0000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ===== SCROLL ANIMATION INFRASTRUCTURE ===== */
+        /* Hero headline reveal wrappers */
+        .line-mask {
+            overflow: hidden;
+            display: block;
+        }
+        .line-mask .line-inner {
+            display: block;
+            will-change: transform;
+        }
+
+        /* Hero parallax image container */
+        .hero-right-panel .parallax-img {
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+            display: block;
+            will-change: transform;
+        }
+
+        /* Scroll-reveal entry states (set by GSAP, defined here for no-JS fallback) */
+        .reveal-ready {
+            visibility: visible;
+        }
+
+        /* 01 / NAVIGATION HEADER */
+        .editorial-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+        }
+
+        .editorial-nav .nav-inner {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .editorial-nav.nav-hidden {
+            transform: translateY(-100%);
+        }
+
+        .editorial-nav.nav-pill {
+            padding: 20px 5%;
+        }
+
+        .editorial-nav.nav-pill .nav-inner {
+            background-color: #9b0000;
+            border-radius: 50px;
+            padding: 15px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .nav-brand {
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'HelveticaLocal', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            text-transform: lowercase;
+            letter-spacing: 0.15em;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+
+        /* 02 / HERO SPLIT CANVAS */
+        .hero-split-canvas {
+            flex-grow: 1;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .hero-left-panel {
+            flex: 0 0 55%;
+            background-color: #9B0000;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 5% 0 5%;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-text-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            z-index: 5;
+            max-width: 100%;
+            margin-top: 5vh;
+        }
+
+        .primary-headline {
+            font-family: var(--font-main);
+            font-size: clamp(4rem, 6vw, 8rem);
+            font-weight: 400;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .technical-sublabel {
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            margin-top: 0;
+        }
+
+        .technical-sublabel .company-name {
+            display: block;
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+        }
+
+        .technical-sublabel .services {
+            font-size: 0.85rem;
+            font-family: var(--font-main);
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 90%;
+            line-height: 1.6;
+        }
+
+        .technical-sublabel .sep {
+            margin: 0 8px;
+            font-style: normal;
+            opacity: 0.4;
+            display: inline-block;
+        }
+
+        .hero-cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #0a0a0a;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta-btn:hover {
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        .hero-right-panel {
+            flex: 0 0 45%;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-right-panel img {
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+            display: block;
+            will-change: transform;
+        }
+
+        .hero-right-panel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 1024px) {
+            .hero-split-canvas {
+                flex-direction: column;
+            }
+            .hero-left-panel, .hero-right-panel {
+                flex: 0 0 auto;
+                height: auto;
+            }
+            .hero-left-panel {
+                min-height: 60vh;
+                padding: 120px 5% 60px 5%;
+                justify-content: flex-start;
+            }
+            .hero-right-panel {
+                height: 40vh;
+            }
+            .editorial-nav {
+                background: #9B0000;
+                position: absolute;
+            }
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .primary-headline {
+                font-size: 4rem;
+            }
+        }
+
+        /* ============================================
+           03 / THE STUDIO & MANIFESTO (NEW)
+           ============================================ */
+        .about-section {
+            background-color: #fff;
+            color: #0a0a0a;
+            padding: 120px 5%;
+            position: relative;
+        }
+
+        .about-label {
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .about-label .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        @media (min-width: 1024px) {
+            .about-content {
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                margin-bottom: 120px;
+            }
+            .about-left {
+                width: 95%; /* Make massive statement span most of the width */
+            }
+            .about-right {
+                width: 70%;
+                margin-left: 20%; /* Offset paragraph to right */
+                max-width: 800px;
+            }
+        }
+
+        .massive-statement {
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            font-size: clamp(2rem, 4vw, 4.5rem); /* Scaled down for better readability */
+            font-weight: 400;
+            line-height: 1.1; /* Natural line height */
+            letter-spacing: -0.02em;
+            color: #000;
+            margin: 0;
+            text-transform: none;
+        }
+
+        .massive-statement .word {
+            display: inline-block;
+        }
+
+        .narrative-paragraph {
+            font-family: var(--font-main);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+            margin: 0;
+        }
+
+        .about-metrics {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 40px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .about-metrics {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 60px;
+            }
+        }
+
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .metric-icon {
+            width: 36px;
+            height: 36px;
+            color: #0a0a0a;
+        }
+
+        .metric-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke-width: 1.2;
+        }
+
+        .metric-number {
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .metric-desc {
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #666;
+            max-width: 90%;
+        }
+
+        /* 05 Flagship Portfolio (Broken Grid Overlap) */
+        .portfolio {
+            background-color: #9b0000;
+            color: #fff;
+            padding: 50px 0; /* Massively reduced so the 150px transform physically breaks out */
+            position: relative;
+            z-index: 10;
+        }
+        
+        .portfolio-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Massively reduced gap */
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .project-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .project-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .project-text {
+            flex: 0 0 40%;
+            /* Removed internal padding so text can sit flush with the grid and span wider */
+        }
+
+        .project-image {
+            flex: 0 0 50%;
+            height: 60vh;
+            min-height: 450px;
+            position: relative;
+            z-index: 15;
+            overflow: hidden; /* Masking wrapper for parallax */
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 130%; /* Taller than wrapper for parallax travel */
+            object-fit: cover;
+            display: block;
+            will-change: transform;
+        }
+
+        .overlap-top .project-image {
+            /* Position handled dynamically by GSAP for the breakout effect */
+            flex: 0 0 65%; /* Increased for an even bigger 16:9 cinematic shot */
+            aspect-ratio: 16 / 9;
+            height: auto;
+        }
+
+        .overlap-top .project-text {
+            flex: 0 0 30%; /* Adjusted text space to accommodate the larger image */
+        }
+
+        .overlap-bottom .project-image {
+            /* Position handled dynamically by GSAP for the breakout effect */
+            flex: 0 0 50%; /* Increased for 1:1 Instagram post size */
+            aspect-ratio: 1 / 1;
+            height: auto; /* Override default height for perfect square */
+        }
+
+        .overlap-bottom .project-text {
+            flex: 0 0 40%; /* Adjusted text space to perfectly balance */
+        }
+
+        .project-row h3 {
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 3rem); /* Scaled down */
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .project-row h3 strong {
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            font-weight: 700;
+        }
+
+        .project-row p {
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-size: clamp(1rem, 1.5vw, 1.4rem); /* Scaled down */
+            line-height: 1.4;
+            color: #fff;
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+
+        /* Specific override for the bottom massive paragraph */
+        .overlap-bottom .project-text p {
+            font-size: clamp(1.4rem, 2vw, 2rem); /* Scaled down to match new proportions */
+            line-height: 1.35;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .project-row, .project-row.reverse {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .project-text, .project-image {
+                flex: 0 0 auto;
+                width: 100%;
+                padding: 0 5%;
+            }
+            .overlap-top .project-image { margin-top: -100px; }
+            .overlap-bottom .project-image { margin-bottom: -100px; }
+        }
+
+        /* 06 All Projects Intro */
+        .all-projects-intro {
+            background-color: #fffaf0; /* matching off-white */
+            color: #9b0000;
+            padding: 150px 5%;
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .all-projects-intro .intro-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 80px;
+        }
+
+        .all-projects-intro .sub-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: -10px; /* Pull title up tight */
+            z-index: 2;
+        }
+
+        .all-projects-intro h2 {
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0;
+            position: relative;
+            letter-spacing: -2px;
+        }
+
+        .all-projects-intro h2 sup {
+            font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            position: absolute;
+            top: 20px;
+            right: -30px;
+        }
+
+        .all-projects-intro .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            max-width: 1200px;
+        }
+
+        .all-projects-intro .intro-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .all-projects-intro .intro-links a {
+            color: #9b0000;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .all-projects-intro .intro-links a.active {
+            font-weight: 700;
+            opacity: 1;
+        }
+
+        .all-projects-intro .intro-links a:hover {
+            opacity: 1;
+        }
+
+        .all-projects-intro .intro-text p {
+            font-size: clamp(1rem, 1.3vw, 1.3rem);
+            line-height: 1.5;
+            font-weight: 400;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .project-list-wrapper {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            position: relative;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            cursor: pointer;
+            color: #9b0000;
+            transition: opacity 0.3s;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(155, 0, 0, 0.1);
+        }
+
+        .project-item:hover {
+            opacity: 0.6;
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-name {
+            font-size: 1.6rem;
+            font-weight: 400;
+            font-family: 'Juana', 'Playfair Display', serif;
+            margin-bottom: 5px;
+        }
+
+        .project-year {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+        }
+
+        .project-location {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            padding-top: 5px;
+        }
+
+        .project-hover-preview {
+            position: sticky;
+            top: 150px;
+            height: 60vh;
+            max-height: 700px;
+            width: 100%;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-hover-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .all-projects-intro .intro-content {
+                grid-template-columns: 1fr;
+            }
+            .all-projects-intro h2 sup {
+                right: -20px;
+            }
+            .project-list-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .project-hover-preview {
+                display: none; /* Hide hover image on mobile */
+            }
+        }
+
+        .portfolio-download {
+            margin-top: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the block relative to the section */
+        }
+
+        .portfolio-download .download-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center everything inside */
+            text-align: center; /* Center paragraph text */
+        }
+
+        .portfolio-download p {
+            font-size: 1.2rem; /* Increased size to match reference */
+            line-height: 1.5;
+            max-width: 650px; /* Widened to allow a nice centered block */
+            margin-bottom: 25px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .portfolio-download .download-link {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #9b0000;
+            text-decoration: none;
+            font-size: 1.8rem; /* Made the download text significantly bigger */
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-download .download-link:hover {
+            opacity: 0.7;
+        }
+
+        .portfolio-download .download-link strong {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-download .download-link sup {
+            font-size: 0.75rem;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .portfolio-download .download-link .arrow {
+            font-size: 1.3rem;
+            margin-top: 2px;
+        }
+
+        /* 07 Clients Section */
+        .clients-section {
+            background-color: #FFFAF0;
+            padding: 150px 5%;
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            color: var(--text-color);
+        }
+
+        .clients-header {
+            max-width: 1200px;
+            margin-bottom: 100px;
+        }
+
+        .clients-label {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .clients-divider {
+            border: none;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+
+        .clients-headline {
+            font-size: clamp(2rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 400;
+            color: var(--text-color);
+            letter-spacing: -1px;
+        }
+
+        .clients-headline .sans {
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        .clients-headline .em-dash {
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            margin: 0 10px;
+        }
+
+        .clients-headline .serif-italic {
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+
+        .clients-grid-container {
+            width: 100%;
+            padding: 40px 0;
+            columns: 4 250px;
+            column-gap: 20px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 150px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .masonry-item:nth-child(even) {
+            min-height: 250px;
+        }
+
+        .masonry-item:nth-child(3n) {
+            min-height: 200px;
+        }
+
+        .masonry-item:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        .masonry-item img {
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+        }
+        
+        .masonry-item .placeholder-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-headline { font-size: clamp(2rem, 6vw, 3rem); }
+            .clients-grid-container { columns: 3 200px; }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid-container { columns: 2 150px; padding: 20px 0; }
+        }
+
+        /* 08 Meet the Team */
+        .team-section {
+            background-color: #9b0000;
+            color: #fff;
+            padding: 150px 0;
+            overflow: hidden;
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            position: relative;
+            z-index: 10;
+        }
+
+        .team-header-content {
+            padding: 0 5%;
+            max-width: 1400px;
+            margin-bottom: 80px;
+        }
+
+        .team-section h2 {
+            font-size: clamp(4rem, 12vw, 10rem);
+            line-height: 0.9;
+            margin: 0 0 40px 0;
+            position: relative;
+            letter-spacing: -3px;
+            display: inline-block;
+        }
+
+        .team-section h2 .sans {
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            font-weight: 700;
+        }
+
+        .team-section h2 .serif {
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-weight: 400;
+            margin: 0 -2px; /* slight pull together to match the tightly tracked logo look */
+        }
+
+        .team-section h2 sup {
+            font-size: clamp(1rem, 2vw, 2rem);
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            position: absolute;
+            top: 20px;
+            right: -40px;
+        }
+
+        .team-header-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 900px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .team-gallery {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+
+        .team-track {
+            display: flex;
+            gap: 20px;
+            padding: 0 5%;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .team-track::-webkit-scrollbar { 
+            display: none; 
+        }
+
+        .team-track img {
+            height: 50vh;
+            min-height: 400px;
+            width: auto;
+            object-fit: cover;
+            filter: grayscale(100%); /* Keeps images black and white */
+            transition: filter 0.3s;
+        }
+
+        .team-track img:hover {
+            filter: grayscale(80%); /* Slight change on hover but remains mostly B&W */
+        }
+
+        .team-lists {
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .team-list-group h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .team-list-group p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            .team-lists {
+                grid-template-columns: 1fr;
+            }
+            .team-track img {
+                height: 350px;
+                min-height: auto;
+            }
+        }
+
+        /* 09 Contact & Footer Combo */
+        .contact-footer-section {
+            background-color: #FFFAF0; /* warm off-white */
+            padding: 120px 5% 40px 5%;
+            color: #000;
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            position: relative;
+        }
+
+        .contact-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 120px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-left h2 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .contact-left .subtitle {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        .contact-left p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #555;
+            max-width: 400px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            font-size: 1.5rem;
+            color: #000;
+            font-family: 'NeueHaasGrotesk', 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-bottom-color: #000;
+        }
+
+        .submit-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #9b0000;
+        }
+
+        /* Middle: Info & Locations */
+        .footer-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 1px solid #ddd;
+            padding-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-social h4, .footer-email h4, .footer-location h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #9b0000;
+            margin-bottom: 15px;
+        }
+
+        .footer-email a {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: #9b0000;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 30px;
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .location-block p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .location-block a {
+            color: #9b0000;
+            text-decoration: underline;
+            font-size: 0.95rem;
+        }
+
+        /* Bottom: Massive Brand Text */
+        .footer-massive-text {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            margin-bottom: 20px;
+        }
+
+        .footer-massive-text h1 {
+            font-size: 14.5vw;
+            line-height: 0.75;
+            color: #9b0000;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        /* Bottom Bar */
+        .footer-bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            text-transform: uppercase;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-top { grid-template-columns: 1fr; }
+            .footer-info-grid { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            .locations-grid { grid-template-columns: 1fr; }
+            .footer-bottom-bar { flex-direction: column; align-items: center; gap: 10px; }
+            .footer-massive-text h1 { font-size: 15vw; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 00 / CINEMATIC PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__tagline" id="preloader-tagline">Design is structure made visible.</div>
+        <div class="preloader__counter" id="preloader-counter">000</div>
+        <div class="preloader__label">loading assets // archintenz inc.</div>
+        <div class="preloader__line" id="preloader-line"></div>
+    </div>
+
+    <!-- 01 & 02 / EDITORIAL HERO -->
+    <section class="hero-editorial">
+        <!-- 01 / NAVIGATION HEADER -->
+        <header class="editorial-nav">
+            <div class="nav-inner">
+                <div class="nav-brand">ARCHINTENZ</div>
+                <nav class="nav-links">
+                    <a href="#portfolio">portfolio</a>
+                    <a href="#strategy">strategy</a>
+                    <a href="#profile">profile</a>
+                    <a href="#contact">contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 02 / HERO SPLIT CANVAS -->
+        <div class="hero-split-canvas">
+            
+            <div class="hero-left-panel">
+                <div class="hero-text-block">
+                    <h1 class="primary-headline">
+                        <span class="line-mask"><span class="line-inner">SHAPING SPACES.</span></span>
+                        <span class="line-mask"><span class="line-inner">BUILDING LEGACIES.</span></span>
+                    </h1>
+                    <div class="technical-sublabel">
+                        <span class="company-name">Archintenz Infrastructures India Pvt Ltd.</span>
+                        <div class="services">
+                            Designing Structural Assets <span class="sep">&bull;</span> Optimizing Corporate Environments <span class="sep">&bull;</span> Engineering Timeless Spaces
+                        </div>
+                    </div>
+                    <a href="#contact" class="hero-cta-btn">Initiate Consultation</a>
+                </div>
+            </div>
+
+            <div class="hero-right-panel">
+                <img src="./assets/images/projects/Commercial project proposals/proposal1.png" alt="Archintenz Space">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 03 / THE STUDIO & MANIFESTO (NEW) -->
+    <section id="profile" class="about-section">
+        <div class="about-container">
+            <div class="about-label">
+                <span class="dot"></span> WHAT WE DO
+            </div>
+            
+            <div class="about-content">
+                <div class="about-left">
+                    <h2 class="massive-statement">
+                        We do not decorate spaces; we engineer structural narratives. We operate at the intersection of absolute spatial utility and raw material texture.
+                    </h2>
+                </div>
+                <div class="about-right">
+                    <p class="narrative-paragraph">
+                        Established in 2015 under the technical leadership of Director Karthikeyan Viswanathan, Archintenz transcends traditional architectural service models. We govern the entire lifecycle of the build—from the initial geometric parameter and site feasibility, to high-fidelity digital prototyping and final turnkey execution. We design spaces to function as permanent physical legacies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-metrics">
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </div>
+                        <div class="metric-number">040+</div>
+                    </div>
+                    <p class="metric-desc">Commissions delivered across corporate infrastructure, luxury residential, and commercial hubs.</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="metric-number">2015</div>
+                    </div>
+                    <p class="metric-desc">Year established in Chennai, delivering over a decade of structural precision and bespoke interior planning.</p>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div class="metric-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="metric-number">03</div>
+                    </div>
+                    <p class="metric-desc">Core operational phases executed with strict engineering governance: Spatial Mapping, Prototyping, and Turnkey Execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 / FLAGSHIP PORTFOLIO EXHIBITION -->
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-grid">
+            
+            <div class="project-row overlap-top">
+                <div class="project-text">
+                    <h3>
+                        We believe in<br>
+                        <strong>emotive and responsive architecture</strong><br>
+                        that empowers people.
+                    </h3>
+                </div>
+                <div class="project-image">
+                    <img src="./assets/images/projects/Commercial project proposals/proposal4.png" alt="Emotive Architecture">
+                </div>
+            </div>
+
+            <div class="project-row reverse overlap-bottom">
+                <div class="project-text">
+                    <p>We optimize natural resources by learning from traditional vernacular architecture. Our designs find absolute equilibrium in function, form, structural durability, and long-term human well-being.</p>
+                </div>
+                <div class="project-image">
+                    <img src="./assets/images/projects/Commercial project proposals/proposal2.png" alt="Vernacular Architecture">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 06 / ALL PROJECTS INTRO -->
+    <section id="all-projects" class="all-projects-intro">
+        <div class="intro-header">
+            <span class="sub-heading">others projects</span>
+            <h2>all projects<sup>05</sup></h2>
+        </div>
+        <div class="intro-content">
+            <div class="intro-links">
+                <a href="#" class="active">all projects</a>
+                <a href="#">housing</a>
+                <a href="#">infrastructure</a>
+                <a href="#">interior design</a>
+                <a href="#">masterplan</a>
+            </div>
+            <div class="intro-text">
+                <p>At Archintenz we have been developing projects for more than 10 years across different scales and areas: from interior design, rehabilitation and home renovations, to new construction, hotel infrastructure, restaurants, offices, facilities and urban planning projects.</p>
+            </div>
+        </div>
+
+        <!-- Project List Section -->
+        <div class="project-list-wrapper">
+            <ul class="project-list">
+                <li class="project-item" data-image="./assets/images/projects/KPL Proposal/KPL.png">
+                    <div class="project-info">
+                        <span class="project-name">KPL Commercial</span>
+                        <span class="project-year">2015</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/cooptex banglore vijayngar/cooptexbangalorevijaynagar.png">
+                    <div class="project-info">
+                        <span class="project-name">Cooptex Vijaynagar</span>
+                        <span class="project-year">2016</span>
+                    </div>
+                    <div class="project-location">Bangalore, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/coimbatore db road/cooptexcoimbatoredbroad.png">
+                    <div class="project-info">
+                        <span class="project-name">Cooptex DB Road</span>
+                        <span class="project-year">2017</span>
+                    </div>
+                    <div class="project-location">Coimbatore, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/cooptex coimbatore sai baba colony/cooptexcoimbatore.png">
+                    <div class="project-info">
+                        <span class="project-name">Cooptex Sai Baba</span>
+                        <span class="project-year">2018</span>
+                    </div>
+                    <div class="project-location">Coimbatore, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/cooptex conference room/Coop- Conf (2) (2).jpeg">
+                    <div class="project-info">
+                        <span class="project-name">Cooptex Conference</span>
+                        <span class="project-year">2019</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/PAKWAN_/pakwan.jpg">
+                    <div class="project-info">
+                        <span class="project-name">Pakwan Restaurant</span>
+                        <span class="project-year">2020</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/Commercial project proposals/proposal 3.png">
+                    <div class="project-info">
+                        <span class="project-name">Commercial Proposals</span>
+                        <span class="project-year">2022</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+            </ul>
+            
+            <!-- Hover Image Preview -->
+            <div class="project-hover-preview">
+                <img src="./assets/images/projects/KPL Proposal/KPL.png" alt="Project Preview" id="hover-preview-img">
+            </div>
+        </div>
+        
+        <!-- Download Portfolio -->
+        <div class="portfolio-download">
+            <div class="download-content">
+                <p>Here you can download our portfolio with all the projects we have carried out with our team, friends and collaborators.</p>
+                <a href="#" class="download-link">
+                    <strong>DOWNLOAD THE FULL PORTFOLIO</strong>
+                    <sup>PDF</sup>
+                    <span class="arrow">&#8600;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 / CLIENTS SECTION -->
+    <section id="clients" class="clients-section">
+        <div class="clients-header">
+            <div class="clients-label">My Featured Clients</div>
+            <hr class="clients-divider">
+            <h2 class="clients-headline">
+                <span class="sans">Trusted by clients who value exceptional design</span>
+                <span class="em-dash">—</span>
+                <span class="serif-italic">explore some of the brands and individuals</span>
+                <span class="sans">I've had the pleasure to work with.</span>
+            </h2>
+        </div>
+
+        <div class="clients-grid-container">
+            <div class="masonry-item"><span class="placeholder-text">FreeSpirit</span></div>
+            <div class="masonry-item"><span class="placeholder-text">FRESENIUS</span></div>
+            <div class="masonry-item"><span class="placeholder-text">PROTEAN</span></div>
+            <div class="masonry-item"><span class="placeholder-text">CNSI</span></div>
+            <div class="masonry-item"><span class="placeholder-text">L&T</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Hapag-Lloyd</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Fullerton</span></div>
+            <div class="masonry-item"><span class="placeholder-text">TAITRA</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Reliance</span></div>
+            <div class="masonry-item"><span class="placeholder-text">JET AIRWAYS</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Pakwan</span></div>
+            <div class="masonry-item"><span class="placeholder-text">WIPRO</span></div>
+            <div class="masonry-item"><span class="placeholder-text">C1</span></div>
+            <div class="masonry-item"><span class="placeholder-text">PARAMOUNT</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Lagros</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Tourism Corp</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Co-optex</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Puducherry</span></div>
+            <div class="masonry-item"><span class="placeholder-text">Dr. JRK's</span></div>
+        </div>
+    </section>
+
+    <!-- 08 / MEET THE TEAM -->
+    <section id="team" class="team-section">
+        <div class="team-header-content">
+            <h2><span class="sans">meet</span><span class="serif">the</span><span class="sans">team</span><sup>10</sup></h2>
+            <p>The founding partners of the studio actively participate in each project. The project Leader coordinates the entire process, ensuring compliance with objectives, deadlines, budget and quality. The creative and interior design team translates the client needs in unique concepts and spaces, while the Project Manager and the construction manager ensures the technical development, execution and control of times and costs. In addition, we collaborate with a network of external specialists, from engineers and landscapers to designers and artists, to offer solutions for each project.</p>
+        </div>
+
+        <div class="team-gallery">
+            <div class="team-track">
+                <img src="./assets/images/projects/KPL Proposal/KPL.png" alt="Team Member 1">
+                <img src="./assets/images/projects/cooptex banglore vijayngar/cooptexbangalorevijaynagar.png" alt="Team Member 2">
+                <img src="./assets/images/projects/coimbatore db road/cooptexcoimbatoredbroad.png" alt="Team Member 3">
+                <img src="./assets/images/projects/cooptex coimbatore sai baba colony/cooptexcoimbatore.png" alt="Team Member 4">
+                <img src="./assets/images/projects/PAKWAN_/pakwan.jpg" alt="Team Member 5">
+                <img src="./assets/images/projects/Commercial project proposals/proposal 3.png" alt="Team Member 6">
+            </div>
+        </div>
+
+        <div class="team-lists">
+            <div class="team-list-group">
+                <h3>FORMER COLLEAGUES</h3>
+                <p>Sara Baldasano (Co-founder), Ainhoa Fernandez, Wallflower Marquez, Ara Manjon, Axelle Santos, Carmen Salas, Claudia Font, Daniel Muñoz, Sweet, Edurne Sanz, Erick de Haan, Hector Ayarza, Humberto Castro, Irene M. Lasanta, Itzia Buenabad, Janeth Ramirez, Jazmin Cabrera, Jordi Ollé, José Tovar, Juan Ramon Mena, Karla Herrera, Loredana Furdui, Luciano DeMarco, Maddi Urdampilleta, Min Son, Mitzi, Noelia Cantos, Omar Vergara, Pablo Gallastegui, Paola Volcoff, Patricia Barbat, Ricardo Palma, Roberto Serrano, Vienna Nuñez, Yazmin Cabrera.</p>
+            </div>
+            
+            <div class="team-list-group">
+                <h3>COLLABORATORS</h3>
+                <p>OVT, Area Uno, Nana+na, Emexs, Lukingud-, Gisela RePlan, Sánchez de Taller de Gisela, Min Son, CUPA, Orfila Arquitectos, Max de Cusa, Fernanda Canales, Cultour, Christian Strassnig, IMAND, Labor, Kris Scheerlinck. Tatiana Bilbao, Livia Arroyo, Chick by accident, César Jimenez.</p>
+            </div>
+
+            <div class="team-list-group">
+                <h3>CLIENTS</h3>
+                <p>Radisson Collection, Silk Road Group, Inmet, First Quantum Minerals, Meduca Ministry of Education of Panama, Cocolia Hotel, Passage Concept Store, Inlora, Habitat Inmobiliaria, Senior Living Foundation, Solid State Foundation, Univer, Hyatt, Hyatt Park, Nana+na, Municipality of Pluma Hidalgo, Mazunte Agency, Wittmore Hotel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09 / COMBINED CONTACT & FOOTER -->
+    <section id="contact" class="contact-footer-section">
+        <!-- Top: Speak to us & Form -->
+        <div class="contact-top">
+            <div class="contact-left">
+                <span class="subtitle">GET IN TOUCH</span>
+                <h2>Speak to us.</h2>
+                <p>If you want to start a project, share an idea or simply say hi, we want to hear from you.</p>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="fname">First name</label>
+                        <input type="text" id="fname" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lname">Last name</label>
+                        <input type="text" id="lname">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="details">Project details</label>
+                    <textarea id="details" rows="1" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    SEND ENQUIRY <span class="arrow">&#8599;</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Middle: Info & Locations -->
+        <div class="footer-info-grid">
+            <div class="footer-social">
+                <h4>Stay up to date</h4>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                    <a href="#" style="color: #9b0000; text-decoration: none; margin-right: 15px;">Instagram</a>
+                    <a href="#" style="color: #9b0000; text-decoration: none; margin-right: 15px;">LinkedIn</a>
+                    <a href="#" style="color: #9b0000; text-decoration: none;">Facebook</a>
+                </p>
+            </div>
+            
+            <div class="footer-contact-details">
+                <div class="footer-email">
+                    <h4>Write to</h4>
+                    <a href="mailto:info@archintenz.com">info@archintenz.com</a>
+                </div>
+                
+                <div class="locations-grid">
+                    <div class="location-block">
+                        <h4>Chennai</h4>
+                        <p>123 Architectural Boulevard,<br>Besant Nagar, Chennai 600090<br>Tamil Nadu, India</p>
+                        <a href="#">+91 98765 43210</a>
+                    </div>
+                    <div class="location-block">
+                        <h4>Coimbatore</h4>
+                        <p>45 Design Avenue,<br>RS Puram, Coimbatore 641002<br>Tamil Nadu, India</p>
+                        <a href="#">+91 99887 76655</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom: Massive Brand Text -->
+        <div class="footer-massive-text">
+            <h1>ARCHINTENZ</h1>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <div>&copy; 2026 ARCHINTENZ. ALL RIGHTS RESERVED.</div>
+            <div>
+                <a href="#" style="color: inherit; text-decoration: none; margin-right: 20px;">LEGAL NOTICE</a>
+                <a href="#" style="color: inherit; text-decoration: none; margin-right: 20px;">COOKIES POLICY</a>
+                <a href="#" style="color: inherit; text-decoration: none;">BACK TO TOP &uarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RUNTIME: Lenis + GSAP + ScrollTrigger (CDN) ===== -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+    (function() {
+        'use strict';
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ══════════════════════════════════════════════
+        //  00 / CINEMATIC PRELOADER
+        //  Hybrid progress: smooth GSAP counter 0→100
+        //  synced with document.fonts.ready + image load.
+        //  Curtain-pull reveal into hero hand-off.
+        // ══════════════════════════════════════════════
+
+        var preloader    = document.getElementById('preloader');
+        var counterEl    = document.getElementById('preloader-counter');
+        var lineEl       = document.getElementById('preloader-line');
+        var taglineEl    = document.getElementById('preloader-tagline');
+        var heroLines    = gsap.utils.toArray('.line-inner');
+
+        // ── Split tagline into individual characters ──
+        // Split tagline into words, then chars within each word
+        // This prevents mid-word line breaks ("mad / e visible")
+        var taglineText = taglineEl.textContent.trim();
+        taglineEl.textContent = '';
+        taglineText.split(' ').forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.className = 'word';
+            word.split('').forEach(function(char) {
+                var charSpan = document.createElement('span');
+                charSpan.className = 'char';
+                charSpan.textContent = char;
+                wordSpan.appendChild(charSpan);
+            });
+            taglineEl.appendChild(wordSpan);
+        });
+        var chars = taglineEl.querySelectorAll('.char');
+
+        // Lock hero text below their masks
+        gsap.set(heroLines, { yPercent: 110 });
+        gsap.set('.technical-sublabel', { opacity: 0, y: 30 });
+        gsap.set('.hero-cta-btn', { opacity: 0, y: 20 });
+        gsap.set('.editorial-nav', { opacity: 0, y: -20 });
+        gsap.set('.hero-right-panel', { clipPath: 'inset(0 0 100% 0)' });
+
+        // ── Tagline letter-by-letter reveal ──────────
+        gsap.to(chars, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            stagger: 0.03,
+            delay: 0.2,
+            force3D: true,
+        });
+
+        // ── Hybrid Progress Engine ──────────────────
+        // Phase 1: Smooth tween 0→80 over ~1.5s
+        // Phase 2: Wait for fonts + images, then 80→100
+        var counter = { val: 0 };
+        var assetsReady = false;
+
+        // Track real asset readiness
+        var fontPromise = document.fonts && document.fonts.ready
+            ? document.fonts.ready
+            : Promise.resolve();
+
+        var heroImgEl = document.querySelector('.hero-right-panel img');
+        var imagePromise = new Promise(function(resolve) {
+            if (!heroImgEl) return resolve();
+            if (heroImgEl.complete && heroImgEl.naturalHeight > 0) return resolve();
+            heroImgEl.addEventListener('load', resolve);
+            heroImgEl.addEventListener('error', resolve);
+        });
+
+        Promise.all([fontPromise, imagePromise]).then(function() {
+            assetsReady = true;
+        });
+
+        // Phase 1: Smooth 0 → 80
+        var phase1 = gsap.to(counter, {
+            val: 80,
+            duration: 1.5,
+            ease: 'power2.out',
+            onUpdate: function() {
+                var v = Math.round(counter.val);
+                counterEl.textContent = String(v).padStart(3, '0');
+                lineEl.style.width = v + '%';
+            },
+            onComplete: function() {
+                // Phase 2: wait for real assets, then sprint to 100
+                waitForAssetsThenFinish();
+            }
+        });
+
+        function waitForAssetsThenFinish() {
+            if (assetsReady) {
+                runPhase2();
+            } else {
+                // Check every 50ms
+                var check = setInterval(function() {
+                    if (assetsReady) {
+                        clearInterval(check);
+                        runPhase2();
+                    }
+                }, 50);
+            }
+        }
+
+        function runPhase2() {
+            // Sprint 80 → 100 rapidly
+            gsap.to(counter, {
+                val: 100,
+                duration: 0.6,
+                ease: 'power3.in',
+                onUpdate: function() {
+                    var v = Math.round(counter.val);
+                    counterEl.textContent = String(v).padStart(3, '0');
+                    lineEl.style.width = v + '%';
+                },
+                onComplete: function() {
+                    // Snap counter color to brand red on completion
+                    counterEl.style.color = '#9B0000';
+                    lineEl.style.background = '#9B0000';
+
+                    // Brief hold at 100 for visual punctuation
+                    gsap.delayedCall(0.3, executeCurtainReveal);
+                }
+            });
+        }
+
+        // ── The Curtain-Pull Reveal ─────────────────
+        function executeCurtainReveal() {
+            var masterTl = gsap.timeline({
+                onComplete: function() {
+                    // Destroy loader DOM to free GPU memory
+                    if (preloader && preloader.parentNode) {
+                        preloader.parentNode.removeChild(preloader);
+                    }
+
+                    // Unlock scroll & initialize Lenis
+                    document.body.style.overflow = '';
+                    initLenisAndScrollAnimations();
+                }
+            });
+
+            // Act 1: Slide the black curtain upward
+            masterTl.to(preloader, {
+                yPercent: -100,
+                duration: 1.0,
+                ease: 'power4.inOut',
+                force3D: true,
+            });
+
+            // Act 2: Simultaneously reveal hero headlines
+            // (starts 0.3s before curtain finishes leaving)
+            masterTl.to(heroLines, {
+                yPercent: 0,
+                duration: 1.2,
+                ease: 'power4.out',
+                stagger: 0.12,
+                force3D: true,
+            }, '-=0.5');
+
+            // Act 3: Nav fades in from above
+            masterTl.to('.editorial-nav', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out',
+                force3D: true,
+            }, '-=0.9');
+
+            // Act 4: Sublabel + CTA cascade in
+            masterTl.to('.technical-sublabel', {
+                opacity: 0.9,
+                y: 0,
+                duration: 0.9,
+                ease: 'power3.out',
+                force3D: true,
+            }, '-=0.6');
+
+            masterTl.to('.hero-cta-btn', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out',
+                force3D: true,
+            }, '-=0.5');
+
+            // Act 5: Hero image — top-to-bottom clip wipe reveal
+            masterTl.to('.hero-right-panel', {
+                clipPath: 'inset(0 0 0% 0)',
+                duration: 1.4,
+                ease: 'power4.inOut',
+            }, '-=1.6');
+        }
+
+        // ══════════════════════════════════════════════
+        //  POST-LOADER: Lenis + Scroll Animations
+        //  Only fires after loader is destroyed.
+        // ══════════════════════════════════════════════
+        function initLenisAndScrollAnimations() {
+
+            // ──────────────────────────────────────────
+            // 1. LENIS INIT — The Momentum Engine
+            // ──────────────────────────────────────────
+            var lenis = new Lenis({
+                lerp: 0.08,
+                syncTouch: true,
+                smoothWheel: true,
+            });
+
+            // ──────────────────────────────────────────
+            // 2. THE CRITICAL SYNC — GSAP ↔ Lenis
+            // ──────────────────────────────────────────
+            lenis.on('scroll', ScrollTrigger.update);
+
+            gsap.ticker.add(function(time) {
+                lenis.raf(time * 1000);
+            });
+
+            gsap.ticker.lagSmoothing(0);
+
+            // ──────────────────────────────────────────
+            // 3. HERO — Lookbook Parallax Image
+            // ──────────────────────────────────────────
+            var heroImg = document.querySelector('.hero-right-panel img');
+            if (heroImg) {
+                gsap.to(heroImg, {
+                    yPercent: 10,
+                    ease: 'none',
+                    force3D: true,
+                    scrollTrigger: {
+                        trigger: '.hero-editorial',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: 1.5,
+                    },
+                });
+            }
+
+            // ──────────────────────────────────────────
+            // 4. ABOUT SECTION — Cinematic Typographic Reveal
+            // ──────────────────────────────────────────
+            var aboutSection = document.querySelector('.about-section');
+            if (aboutSection) {
+                // Split massive statement into words for scroll-scrub reveal
+                const statementEl = document.querySelector('.massive-statement');
+                if (statementEl) {
+                    const text = statementEl.innerText.trim().replace(/\s+/g, ' ');
+                    statementEl.innerHTML = '';
+                    text.split(' ').forEach(word => {
+                        if (!word) return;
+                        const span = document.createElement('span');
+                        span.className = 'word';
+                        span.innerText = word;
+                        statementEl.appendChild(span);
+                        statementEl.appendChild(document.createTextNode(' '));
+                    });
+                    
+                    // Set initial dim state for words
+                    gsap.set('.massive-statement .word', { opacity: 0.15 });
+                }
+
+                const aboutTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.about-section',
+                        start: 'top 75%',
+                    }
+                });
+
+                aboutTl.from('.about-label', {
+                    y: 20,
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: 'power3.out',
+                    force3D: true,
+                })
+                .from('.massive-statement', {
+                    y: 60,
+                    opacity: 0,
+                    duration: 1.5,
+                    ease: 'expo.out',
+                    force3D: true,
+                }, "-=0.8")
+                .from('.narrative-paragraph', {
+                    y: 40,
+                    opacity: 0,
+                    duration: 1.6,
+                    ease: 'power3.out',
+                    force3D: true,
+                }, "-=1.2")
+                .from('.about-metrics', {
+                    borderTopColor: 'rgba(0,0,0,0)',
+                    duration: 1.2,
+                    ease: 'power2.inOut',
+                }, "-=1.2")
+                .from('.metric-item', {
+                    y: 40,
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: 'power3.out',
+                    stagger: 0.2,
+                    force3D: true,
+                }, "-=1.2");
+
+                // Butter smooth scroll scrub word reveal
+                if (statementEl) {
+                    gsap.to('.massive-statement .word', {
+                        opacity: 1,
+                        stagger: 0.1,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.about-section',
+                            start: 'top 55%',
+                            end: 'top 10%',
+                            scrub: 1, // Add slight delay to scrub for that 'butter' feel
+                        }
+                    });
+                }
+            }
+
+            // ──────────────────────────────────────────
+            // 6. PORTFOLIO — Overlap Layout & Parallax
+            // ──────────────────────────────────────────
+            const projectRows = document.querySelectorAll('.project-row');
+            projectRows.forEach(row => {
+                const text = row.querySelector('.project-text');
+                const imgContainer = row.querySelector('.project-image');
+                const img = row.querySelector('.project-image img');
+                
+                // 1. Entrance Animation
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: row,
+                        start: 'top 80%',
+                    }
+                });
+
+                tl.from(text, {
+                    y: 40,
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: 'power3.out',
+                    force3D: true,
+                });
+
+                // 2. Parallax Zoom/Pan on Inner Image
+                gsap.fromTo(img, 
+                    { yPercent: -15, scale: 1.15 },
+                    {
+                        yPercent: 15,
+                        scale: 1.0, // Cinematic zoom-out reveal
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: imgContainer, 
+                            start: 'top bottom', 
+                            end: 'bottom top',   
+                            scrub: 1, 
+                        }
+                    }
+                );
+
+                // 3. Dynamic Section Breakout
+                if (row.classList.contains('overlap-top')) {
+                    // Translate both image and text together to stay aligned
+                    gsap.to([imgContainer, text], {
+                        y: -150, // Reduced from -300 to tighten the gap
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: row,
+                            start: 'top 80%',
+                            end: 'top 0%',
+                            scrub: 1,
+                        }
+                    });
+                }
+
+                if (row.classList.contains('overlap-bottom')) {
+                    // Translate both image and text together to stay aligned
+                    gsap.to([imgContainer, text], {
+                        y: 150, // Reduced from 300 to tighten the gap
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: row,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1,
+                        }
+                    });
+                }
+            });
+
+            // ──────────────────────────────────────────
+            // 7. ALL PROJECTS INTRO — Entrance Reveal
+            // ──────────────────────────────────────────
+            gsap.from('.all-projects-intro .intro-header > *', {
+                y: 50,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.all-projects-intro',
+                    start: 'top 80%',
+                }
+            });
+            
+            gsap.from('.all-projects-intro .intro-content > *', {
+                y: 40,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.15,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.all-projects-intro .intro-content',
+                    start: 'top 85%',
+                }
+            });
+
+            // ──────────────────────────────────────────
+            // 8. PROJECT LIST HOVER IMAGE EFFECT
+            // ──────────────────────────────────────────
+            const projectItems = document.querySelectorAll('.project-item');
+            const hoverPreview = document.querySelector('.project-hover-preview');
+            const hoverImg = document.getElementById('hover-preview-img');
+
+            if (projectItems.length > 0 && hoverPreview) {
+                projectItems.forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        const imgSrc = item.getAttribute('data-image');
+                        if (imgSrc) {
+                            // Only update if it's a new image
+                            if (!hoverImg.src.includes(imgSrc.replace('./', ''))) {
+                                hoverImg.src = imgSrc;
+                            }
+                            hoverPreview.style.opacity = '1';
+                        }
+                    });
+                });
+                
+                // Fade out when mouse leaves the list container
+                document.querySelector('.project-list').addEventListener('mouseleave', () => {
+                    hoverPreview.style.opacity = '0';
+                });
+            }
+
+            // ──────────────────────────────────────────
+            // 9. CONTACT — Entrance Reveal
+            // ──────────────────────────────────────────
+            gsap.from('.contact h2', {
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                force3D: true,
+                scrollTrigger: {
+                    trigger: '.contact',
+                    start: 'top 75%',
+                },
+            });
+
+            gsap.from('.inquiry-form', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out',
+                delay: 0.2,
+                force3D: true,
+                scrollTrigger: {
+                    trigger: '.contact',
+                    start: 'top 65%',
+                },
+            });
+
+            // ──────────────────────────────────────────
+            // 10. NAVBAR DYNAMIC SCROLL LOGIC
+            // ──────────────────────────────────────────
+            const nav = document.querySelector('.editorial-nav');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                const heroSection = document.querySelector('.hero-editorial');
+                const heroHeight = heroSection ? heroSection.offsetHeight : 800;
+                
+                // 1. At the very top (inside hero) -> show normal transparent nav
+                if (currentScrollY <= 10) {
+                    nav.classList.remove('nav-hidden', 'nav-pill');
+                }
+                // 2. Scrolling Down -> Hide nav
+                else if (currentScrollY > lastScrollY) {
+                    nav.classList.add('nav-hidden');
+                    nav.classList.remove('nav-pill');
+                }
+                // 3. Scrolling Up
+                else if (currentScrollY < lastScrollY) {
+                    // 3a. After Hero Section -> Show Pill
+                    if (currentScrollY > heroHeight) {
+                        nav.classList.remove('nav-hidden');
+                        nav.classList.add('nav-pill');
+                    }
+                    // 3b. Inside Hero Section -> Keep hidden until the very top
+                    else {
+                        nav.classList.add('nav-hidden');
+                        nav.classList.remove('nav-pill');
+                    }
+                }
+                lastScrollY = currentScrollY;
+            });
+
+            // ──────────────────────────────────────────
+            // 11. MEMORY CLEANUP — Recalibrate triggers
+            // ──────────────────────────────────────────
+            ScrollTrigger.refresh();
+        }
+
+    })();
+    </script>
+
+</body>
+</html>
