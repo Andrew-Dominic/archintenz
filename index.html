@@ -98,90 +98,9 @@
             color: var(--text-color);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            overflow: hidden; /* Locked during preloader — unlocked by JS */
         }
 
-        /* ===== 00 / CINEMATIC PRELOADER ===== */
-        .preloader {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            will-change: transform;
-        }
 
-        /* Centered tagline — the cinematic focal point */
-        .preloader__tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 3.5vw, 3.2rem);
-            font-weight: 400;
-            font-style: italic;
-            color: #0a0a0a;
-            letter-spacing: 0.01em;
-            line-height: 1.5;
-            text-align: center;
-            user-select: none;
-            max-width: 700px;
-            padding: 0 5%;
-        }
-
-        .preloader__tagline .word {
-            display: inline-block;
-            white-space: nowrap;
-            margin-right: 0.3em;
-        }
-        .preloader__tagline .word:last-child {
-            margin-right: 0;
-        }
-
-        .preloader__tagline .char {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(10px);
-            will-change: transform, opacity;
-        }
-
-        /* Counter — bottom-right, Playfair italic */
-        .preloader__counter {
-            position: absolute;
-            bottom: 50px;
-            right: 5%;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 400;
-            font-style: italic;
-            color: rgba(10, 10, 10, 0.35);
-            letter-spacing: -0.02em;
-            line-height: 1;
-            user-select: none;
-        }
-
-        /* Label — bottom-left for visual balance */
-        .preloader__label {
-            position: absolute;
-            bottom: 54px;
-            left: 5%;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: rgba(10, 10, 10, 0.3);
-            user-select: none;
-        }
-
-        /* Full-width progress bar at the very bottom */
-        .preloader__line {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 8px;
-            background: linear-gradient(90deg, #9B0000, #d9232d);
-            transition: width 0.05s linear;
-        }
 
         /* Basic skeleton styles for layout */
         section {
@@ -341,7 +260,8 @@
         .technical-sublabel .company-name {
             display: block;
             font-size: 1.5rem;
-            font-style: italic;
+            font-family: 'Juana', 'Playfair Display', serif;
+            font-style: normal;
             font-weight: 400;
             color: #fff;
             letter-spacing: 0.02em;
@@ -1350,13 +1270,7 @@
 </head>
 <body>
 
-    <!-- 00 / CINEMATIC PRELOADER -->
-    <div class="preloader" id="preloader">
-        <div class="preloader__tagline" id="preloader-tagline">Design is structure made visible.</div>
-        <div class="preloader__counter" id="preloader-counter">000</div>
-        <div class="preloader__label">loading assets // archintenz inc.</div>
-        <div class="preloader__line" id="preloader-line"></div>
-    </div>
+    <!-- PRELOADER REMOVED -->
 
     <!-- 01 & 02 / EDITORIAL HERO -->
     <section class="hero-editorial">
@@ -1495,7 +1409,7 @@
     <section id="all-projects" class="all-projects-intro">
         <div class="intro-header">
             <span class="sub-heading">others projects</span>
-            <h2>all projects<sup>05</sup></h2>
+            <h2>all projects<sup>10</sup></h2>
         </div>
         <div class="intro-content">
             <div class="intro-links">
@@ -1562,6 +1476,34 @@
                     </div>
                     <div class="project-location">Chennai, India</div>
                 </li>
+                <li class="project-item" data-image="./assets/images/projects/CNSI ALL FLOORS/CNSI.png">
+                    <div class="project-info">
+                        <span class="project-name">CNSI All Floors</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/freespirit/Freesprit.jpg">
+                    <div class="project-info">
+                        <span class="project-name">FreeSpirit</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/hapag llyod/Hapg Llyod (1).jpg">
+                    <div class="project-info">
+                        <span class="project-name">Hapag-Lloyd</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <div class="project-location">Chennai, India</div>
+                </li>
+                <li class="project-item" data-image="./assets/images/projects/tamilnadu handlooms silk authenticity test center egmore/tamilnadu handlooms silk authenticity test center.png">
+                    <div class="project-info">
+                        <span class="project-name">TN Handlooms Center</span>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <div class="project-location">Egmore, India</div>
+                </li>
             </ul>
             
             <!-- Hover Image Preview -->
@@ -1589,10 +1531,7 @@
             <div class="clients-label">My Featured Clients</div>
             <hr class="clients-divider">
             <h2 class="clients-headline">
-                <span class="sans">Trusted by clients who value exceptional design</span>
-                <span class="em-dash">—</span>
-                <span class="serif-italic">explore some of the brands and individuals</span>
-                <span class="sans">I've had the pleasure to work with.</span>
+                <span class="sans">Trusted by clients who value exceptional design explore some of the brands and individuals I've had the pleasure to work with.</span>
             </h2>
         </div>
 
@@ -1759,163 +1698,35 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // ══════════════════════════════════════════════
-        //  00 / CINEMATIC PRELOADER
-        //  Hybrid progress: smooth GSAP counter 0→100
-        //  synced with document.fonts.ready + image load.
-        //  Curtain-pull reveal into hero hand-off.
+        //  HERO REVEAL & INITIALIZATION
         // ══════════════════════════════════════════════
 
-        var preloader    = document.getElementById('preloader');
-        var counterEl    = document.getElementById('preloader-counter');
-        var lineEl       = document.getElementById('preloader-line');
-        var taglineEl    = document.getElementById('preloader-tagline');
         var heroLines    = gsap.utils.toArray('.line-inner');
 
-        // ── Split tagline into individual characters ──
-        // Split tagline into words, then chars within each word
-        // This prevents mid-word line breaks ("mad / e visible")
-        var taglineText = taglineEl.textContent.trim();
-        taglineEl.textContent = '';
-        taglineText.split(' ').forEach(function(word) {
-            var wordSpan = document.createElement('span');
-            wordSpan.className = 'word';
-            word.split('').forEach(function(char) {
-                var charSpan = document.createElement('span');
-                charSpan.className = 'char';
-                charSpan.textContent = char;
-                wordSpan.appendChild(charSpan);
-            });
-            taglineEl.appendChild(wordSpan);
-        });
-        var chars = taglineEl.querySelectorAll('.char');
-
         // Lock hero text below their masks
-        gsap.set(heroLines, { yPercent: 110 });
-        gsap.set('.technical-sublabel', { opacity: 0, y: 30 });
-        gsap.set('.hero-cta-btn', { opacity: 0, y: 20 });
-        gsap.set('.editorial-nav', { opacity: 0, y: -20 });
+        gsap.set(heroLines, { yPercent: 77 });
+        gsap.set('.technical-sublabel', { opacity: 0, y: 21 });
+        gsap.set('.hero-cta-btn', { opacity: 0, y: 14 });
+        gsap.set('.editorial-nav', { opacity: 0, y: -14 });
         gsap.set('.hero-right-panel', { clipPath: 'inset(0 0 100% 0)' });
 
-        // ── Tagline letter-by-letter reveal ──────────
-        gsap.to(chars, {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'power2.out',
-            stagger: 0.03,
-            delay: 0.2,
-            force3D: true,
-        });
-
-        // ── Hybrid Progress Engine ──────────────────
-        // Phase 1: Smooth tween 0→80 over ~1.5s
-        // Phase 2: Wait for fonts + images, then 80→100
-        var counter = { val: 0 };
-        var assetsReady = false;
-
-        // Track real asset readiness
-        var fontPromise = document.fonts && document.fonts.ready
-            ? document.fonts.ready
-            : Promise.resolve();
-
-        var heroImgEl = document.querySelector('.hero-right-panel img');
-        var imagePromise = new Promise(function(resolve) {
-            if (!heroImgEl) return resolve();
-            if (heroImgEl.complete && heroImgEl.naturalHeight > 0) return resolve();
-            heroImgEl.addEventListener('load', resolve);
-            heroImgEl.addEventListener('error', resolve);
-        });
-
-        Promise.all([fontPromise, imagePromise]).then(function() {
-            assetsReady = true;
-        });
-
-        // Phase 1: Smooth 0 → 80
-        var phase1 = gsap.to(counter, {
-            val: 80,
-            duration: 1.5,
-            ease: 'power2.out',
-            onUpdate: function() {
-                var v = Math.round(counter.val);
-                counterEl.textContent = String(v).padStart(3, '0');
-                lineEl.style.width = v + '%';
-            },
-            onComplete: function() {
-                // Phase 2: wait for real assets, then sprint to 100
-                waitForAssetsThenFinish();
-            }
-        });
-
-        function waitForAssetsThenFinish() {
-            if (assetsReady) {
-                runPhase2();
-            } else {
-                // Check every 50ms
-                var check = setInterval(function() {
-                    if (assetsReady) {
-                        clearInterval(check);
-                        runPhase2();
-                    }
-                }, 50);
-            }
-        }
-
-        function runPhase2() {
-            // Sprint 80 → 100 rapidly
-            gsap.to(counter, {
-                val: 100,
-                duration: 0.6,
-                ease: 'power3.in',
-                onUpdate: function() {
-                    var v = Math.round(counter.val);
-                    counterEl.textContent = String(v).padStart(3, '0');
-                    lineEl.style.width = v + '%';
-                },
-                onComplete: function() {
-                    // Snap counter color to brand red on completion
-                    counterEl.style.color = '#9B0000';
-                    lineEl.style.background = '#9B0000';
-
-                    // Brief hold at 100 for visual punctuation
-                    gsap.delayedCall(0.3, executeCurtainReveal);
-                }
-            });
-        }
-
-        // ── The Curtain-Pull Reveal ─────────────────
-        function executeCurtainReveal() {
+        function executeHeroReveal() {
             var masterTl = gsap.timeline({
                 onComplete: function() {
-                    // Destroy loader DOM to free GPU memory
-                    if (preloader && preloader.parentNode) {
-                        preloader.parentNode.removeChild(preloader);
-                    }
-
-                    // Unlock scroll & initialize Lenis
-                    document.body.style.overflow = '';
                     initLenisAndScrollAnimations();
                 }
             });
 
-            // Act 1: Slide the black curtain upward
-            masterTl.to(preloader, {
-                yPercent: -100,
-                duration: 1.0,
-                ease: 'power4.inOut',
-                force3D: true,
-            });
-
-            // Act 2: Simultaneously reveal hero headlines
-            // (starts 0.3s before curtain finishes leaving)
+            // Act 1: Reveal hero headlines
             masterTl.to(heroLines, {
                 yPercent: 0,
                 duration: 1.2,
                 ease: 'power4.out',
                 stagger: 0.12,
                 force3D: true,
-            }, '-=0.5');
+            }, '+=0.2');
 
-            // Act 3: Nav fades in from above
+            // Act 2: Nav fades in from above
             masterTl.to('.editorial-nav', {
                 opacity: 1,
                 y: 0,
@@ -1924,7 +1735,7 @@
                 force3D: true,
             }, '-=0.9');
 
-            // Act 4: Sublabel + CTA cascade in
+            // Act 3: Sublabel + CTA cascade in
             masterTl.to('.technical-sublabel', {
                 opacity: 0.9,
                 y: 0,
@@ -1941,13 +1752,16 @@
                 force3D: true,
             }, '-=0.5');
 
-            // Act 5: Hero image — top-to-bottom clip wipe reveal
+            // Act 4: Hero image — top-to-bottom clip wipe reveal
             masterTl.to('.hero-right-panel', {
                 clipPath: 'inset(0 0 0% 0)',
                 duration: 1.4,
                 ease: 'power4.inOut',
             }, '-=1.6');
         }
+
+        // Run immediately
+        executeHeroReveal();
 
         // ══════════════════════════════════════════════
         //  POST-LOADER: Lenis + Scroll Animations
@@ -1981,7 +1795,7 @@
             var heroImg = document.querySelector('.hero-right-panel img');
             if (heroImg) {
                 gsap.to(heroImg, {
-                    yPercent: 10,
+                    yPercent: 7,
                     ease: 'none',
                     force3D: true,
                     scrollTrigger: {
@@ -2024,21 +1838,21 @@
                 });
 
                 aboutTl.from('.about-label', {
-                    y: 20,
+                    y: 14,
                     opacity: 0,
                     duration: 1.2,
                     ease: 'power3.out',
                     force3D: true,
                 })
                 .from('.massive-statement', {
-                    y: 60,
+                    y: 42,
                     opacity: 0,
                     duration: 1.5,
                     ease: 'expo.out',
                     force3D: true,
                 }, "-=0.8")
                 .from('.narrative-paragraph', {
-                    y: 40,
+                    y: 28,
                     opacity: 0,
                     duration: 1.6,
                     ease: 'power3.out',
@@ -2050,7 +1864,7 @@
                     ease: 'power2.inOut',
                 }, "-=1.2")
                 .from('.metric-item', {
-                    y: 40,
+                    y: 28,
                     opacity: 0,
                     duration: 1.2,
                     ease: 'power3.out',
@@ -2092,7 +1906,7 @@
                 });
 
                 tl.from(text, {
-                    y: 40,
+                    y: 28,
                     opacity: 0,
                     duration: 1.2,
                     ease: 'power3.out',
@@ -2101,9 +1915,9 @@
 
                 // 2. Parallax Zoom/Pan on Inner Image
                 gsap.fromTo(img, 
-                    { yPercent: -15, scale: 1.15 },
+                    { yPercent: -10, scale: 1.10 },
                     {
-                        yPercent: 15,
+                        yPercent: 10,
                         scale: 1.0, // Cinematic zoom-out reveal
                         ease: 'none',
                         scrollTrigger: {
@@ -2119,7 +1933,7 @@
                 if (row.classList.contains('overlap-top')) {
                     // Translate both image and text together to stay aligned
                     gsap.to([imgContainer, text], {
-                        y: -150, // Reduced from -300 to tighten the gap
+                        y: -105, // Reduced from -300 to tighten the gap
                         ease: 'none',
                         scrollTrigger: {
                             trigger: row,
@@ -2133,7 +1947,7 @@
                 if (row.classList.contains('overlap-bottom')) {
                     // Translate both image and text together to stay aligned
                     gsap.to([imgContainer, text], {
-                        y: 150, // Reduced from 300 to tighten the gap
+                        y: 105, // Reduced from 300 to tighten the gap
                         ease: 'none',
                         scrollTrigger: {
                             trigger: row,
@@ -2149,7 +1963,7 @@
             // 7. ALL PROJECTS INTRO — Entrance Reveal
             // ──────────────────────────────────────────
             gsap.from('.all-projects-intro .intro-header > *', {
-                y: 50,
+                y: 35,
                 opacity: 0,
                 duration: 1.2,
                 stagger: 0.1,
@@ -2161,7 +1975,7 @@
             });
             
             gsap.from('.all-projects-intro .intro-content > *', {
-                y: 40,
+                y: 28,
                 opacity: 0,
                 duration: 1.2,
                 stagger: 0.15,
@@ -2203,7 +2017,7 @@
             // 9. CONTACT — Entrance Reveal
             // ──────────────────────────────────────────
             gsap.from('.contact h2', {
-                y: 40,
+                y: 28,
                 opacity: 0,
                 duration: 1,
                 ease: 'power3.out',
@@ -2215,7 +2029,7 @@
             });
 
             gsap.from('.inquiry-form', {
-                y: 50,
+                y: 35,
                 opacity: 0,
                 duration: 1,
                 ease: 'power3.out',
